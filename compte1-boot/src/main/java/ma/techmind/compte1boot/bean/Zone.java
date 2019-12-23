@@ -1,4 +1,4 @@
-package ma.techmind.compte1boot.bean;
+	package ma.techmind.compte1boot.bean;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

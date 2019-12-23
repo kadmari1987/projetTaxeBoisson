@@ -16,16 +16,16 @@ public class Quartier {
 	private long id;
 	private String nom;
 	@ManyToOne
-	private Zone id_zone;
+	private Zone zone;
 	public Quartier() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Quartier(long id, String nom, Zone id_zone) {
+	public Quartier(long id, String nom, Zone zone) {
 		super();
 		this.id = id;
 		this.nom = nom;
-		this.id_zone = id_zone;
+		this.zone = zone;
 	}
 	@Override
 	public int hashCode() {
@@ -60,10 +60,10 @@ public class Quartier {
 		this.nom = nom;
 	}
 	public Zone getId_zone() {
-		return id_zone;
+		return zone;
 	}
-	public void setId_zone(Zone id_zone) {
-		this.id_zone = id_zone;
+	public void setId_zone(Zone zone) {
+		this.zone = zone;
 	}
 	public static long getSerialversionuid() {
 		return serialVersionUID;

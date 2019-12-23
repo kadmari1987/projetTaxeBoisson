@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Local implements Serializable {
@@ -19,8 +20,10 @@ public class Local implements Serializable {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	private String nom;
-	
-	Rue rue;
+	@ManyToOne
+	private Rue rue;
+	@ManyToOne
+	private Categorie categorie;
 	public Local(Long id, String nom) {
 		super();
 		this.id = id;
@@ -37,6 +40,14 @@ public class Local implements Serializable {
 	}
 	public void setNom(String nom) {
 		this.nom = nom;
+	}
+	
+	
+	public Rue getRue() {
+		return rue;
+	}
+	public void setRue(Rue rue) {
+		this.rue = rue;
 	}
 	@Override
 	public int hashCode() {

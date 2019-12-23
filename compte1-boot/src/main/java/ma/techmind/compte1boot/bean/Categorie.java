@@ -1,4 +1,4 @@
-package ma.techmind.compte1boot.bean;
+ package ma.techmind.compte1boot.bean;
 
 import java.io.Serializable;
 
@@ -15,6 +15,28 @@ public class Categorie implements Serializable {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 	private String type;
+	private double total;
+	private double totalpaye;
+	
+	public double getTotal() {
+		return total;
+	}
+	public void setTotal(double total) {
+		this.total = total;
+	}
+	public double getTotalpaye() {
+		return totalpaye;
+	}
+	public void setTotalpaye(double totalpaye) {
+		this.totalpaye = totalpaye;
+	}
+	public Categorie(long id, String type, double total, double totalpaye) {
+		super();
+		this.id = id;
+		this.type = type;
+		this.total = total;
+		this.totalpaye = totalpaye;
+	}
 	public Categorie() {
 		super();
 		// TODO Auto-generated constructor stub

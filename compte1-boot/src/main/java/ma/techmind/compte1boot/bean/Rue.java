@@ -1,24 +1,29 @@
 package ma.techmind.compte1boot.bean;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
 @Entity
 public class Rue {
-
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 	private String nom;
 	@ManyToOne
-	private Quartier id_quartier;
+	private Quartier quartier;
 	public Rue() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Rue(long id, String nom, Quartier id_quartier) {
+	public Rue(long id, String nom, Quartier quartier) {
 		super();
 		this.id = id;
 		this.nom = nom;
-		this.id_quartier = id_quartier;
+		this.quartier = quartier;
 	}
 	@Override
 	public int hashCode() {
@@ -53,10 +58,10 @@ public class Rue {
 		this.nom = nom;
 	}
 	public Quartier getId_quartier() {
-		return id_quartier;
+		return quartier;
 	}
-	public void setId_quartier(Quartier id_quartier) {
-		this.id_quartier = id_quartier;
+	public void setId_quartier(Quartier quartier) {
+		this.quartier = quartier;
 	}
 	
 	
